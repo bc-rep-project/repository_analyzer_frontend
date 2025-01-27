@@ -6,7 +6,7 @@ import { analyzeRepository, getAnalysisResults, getAnalysisStatus } from '../ser
 
 export default function Home() {
   const [analysisData, setAnalysisData] = useState(null);
-  const [selectedLanguage, setSelectedLanguage] = useState('python');
+  const [selectedLanguage, setSelectedLanguage] = useState('java');
   const [analysisId, setAnalysisId] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

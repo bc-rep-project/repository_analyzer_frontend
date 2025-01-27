@@ -2,10 +2,7 @@ import { useState, useEffect } from 'react';
 
 export default function LanguageSelector({ selectedLanguage, onSelect }) {
   const languages = [
-    { value: 'python', label: 'Python' },
-    { value: 'typescript', label: 'TypeScript' },
     { value: 'java', label: 'Java' },
-    { value: 'cpp', label: 'C++' }
   ];
 
   return (
