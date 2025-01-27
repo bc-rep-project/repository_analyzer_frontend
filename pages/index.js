@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import RepositoryInput from '../../components/RepositoryInput';
-import AnalysisResults from '../../components/AnalysisResults';
-import LanguageSelector from '../../components/LanguageSelector';
+import RepositoryInput from '../components/RepositoryInput';
+import AnalysisResults from '../components/AnalysisResults';
+import LanguageSelector from '../components/LanguageSelector';
 import { analyzeRepository, getAnalysisResults, getAnalysisStatus } from '../services/analysisService';
 
 export default function Home() {
