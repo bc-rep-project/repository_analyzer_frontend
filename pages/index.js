@@ -68,7 +68,7 @@ export default function Home() {
               </button>
             </form>
           </div>
-        </div>
+      </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
