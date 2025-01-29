@@ -1,0 +1,38 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+  }
+  
+  .userList {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .userCard {
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+  
+  .userCard:hover {
+    transform: translateY(-3px);
+  }
+  
+  .userCard h3 {
+    margin-bottom: 0.5rem;
+    color: #646cff;
+  }
+  
+  .userCard p {
+    color: #888;
+  }

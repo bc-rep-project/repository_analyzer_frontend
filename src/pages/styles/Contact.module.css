@@ -1,0 +1,43 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .formContainer {
+    margin-top: 2rem;
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .formGroup label {
+    font-weight: 500;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: inherit;
+  }
+  
+  .submitButton {
+    align-self: flex-start;
+    background-color: #646cff;
+  }
+  
+  .submitButton:hover {
+    background-color: #747bff;
+  }

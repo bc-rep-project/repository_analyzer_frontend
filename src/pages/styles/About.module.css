@@ -1,0 +1,29 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .content {
+    margin-top: 2rem;
+    line-height: 1.6;
+  }
+  
+  .features {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+  }
+  
+  .features h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .features ul {
+    padding-left: 2rem;
+  }
+  
+  .features li {
+    margin: 0.5rem 0;
+  }
