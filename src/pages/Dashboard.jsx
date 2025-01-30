@@ -1,46 +1,35 @@
-import { useState, useEffect } from 'react'
-import styles from './styles/Dashboard.module.css'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { api } from '../services/api';
+import styles from './styles/Dashboard.module.css';
 
 export default function Dashboard() {
-  const [notifications, setNotifications] = useState([])
-  const [socket, setSocket] = useState(null)
+  const { userId } = useParams();
+  const [visualization, setVisualization] = useState(null);
 
   useEffect(() => {
-    const newSocket = new WebSocket(import.meta.env.VITE_WS_URL)
+    const fetchVisualization = async () => {
+      try {
+        const response = await api.get(`/visualize/${userId}`);
+        setVisualization(response.data);
+      } catch (err) {
+        console.error('Error fetching visualization:', err);
+      }
+    };
     
-    newSocket.onopen = () => {
-      console.log('WebSocket connected')
-      setSocket(newSocket)
-    }
-
-    newSocket.onmessage = (event) => {
-      const data = JSON.parse(event.data)
-      setNotifications(prev => [data, ...prev.slice(0, 9)])
-    }
-
-    newSocket.onerror = (error) => {
-      console.error('WebSocket error:', error)
-    }
-
-    return () => newSocket.close()
-  }, [])
+    if (userId) fetchVisualization();
+  }, [userId]);
 
   return (
     <div className={styles.container}>
-      <h1>Real-Time Dashboard</h1>
-      <div className={styles.notifications}>
-        <h2>Notifications</h2>
-        <div className={styles.list}>
-          {notifications.map((notification, index) => (
-            <div key={index} className={styles.item}>
-              {notification.message}
-            </div>
-          ))}
-          {notifications.length === 0 && (
-            <div className={styles.empty}>No notifications</div>
-          )}
+      {visualization ? (
+        <div className={styles.visualization}>
+          <h2>Repository Structure for {visualization.user}</h2>
+          <pre>{JSON.stringify(visualization.structure, null, 2)}</pre>
         </div>
-      </div>
+      ) : (
+        <div className={styles.loading}>Loading visualization...</div>
+      )}
     </div>
-  )
+  );
 }
