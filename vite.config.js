@@ -12,5 +12,19 @@ export default defineConfig({
       }
     }
   },
-  plugins: [react()]
+  plugins: [react()],
+  server: {
+    port: 3000,
+    open: true
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true
+  },
+  css: {
+    modules: {
+      localsConvention: 'camelCase'
+    }
+  }
 });
