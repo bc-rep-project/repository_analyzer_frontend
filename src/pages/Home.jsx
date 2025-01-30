@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './styles/Home.module.css'
-import { userService } from '../../services/api'
+import { userService } from "../services/api";
 
 export default function Home() {
   const [users, setUsers] = useState([])
